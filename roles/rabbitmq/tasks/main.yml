@@ -6,9 +6,7 @@
 
 - name: Install Erlang and RabbitMQ
   ansible.builtin.dnf:
-    name:
-      - rabbitmq-server
-      - erlang
+    name: rabbitmq-server
     state: installed
 
 - name: Start rabbitmq service
