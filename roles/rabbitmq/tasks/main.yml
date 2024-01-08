@@ -4,10 +4,11 @@
 - name: Install rabbitmq repo
   ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
 
-- name: Install rabbitmq-server
-  ansible.builtin.yum:
+- name: Install rabbitmq
+  ansible.builtin.dnf:
     name: rabbitmq-server
     state: installed
+
 
 - name: Start rabbitmq service
   ansible.builtin.systemd:
