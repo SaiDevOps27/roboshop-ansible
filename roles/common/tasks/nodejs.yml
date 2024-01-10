@@ -1,6 +1,11 @@
-- name: Install nodejs 18
+- name: Remove the nodejs package
   ansible.builtin.dnf:
-    name: nodejs >= 18
+    name: nodejs
+    state: absent
+
+- name: Enable and Install nodejs
+  ansible.builtin.dnf:
+    name: "nodejs:18"
     state: installed
 
 
