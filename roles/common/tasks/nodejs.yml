@@ -2,6 +2,12 @@
   ansible.builtin.dnf:
     name: nodejs
     state: absent
+    disable_gpg_check: yes
+
+- name: enable and install nodejs
+  ansible.builtin.dnf:
+    name: "nodejs:18.19.1"
+    state: installed
 
 
 
