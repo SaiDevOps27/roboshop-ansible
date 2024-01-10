@@ -3,9 +3,10 @@
     name: nodejs
     state: absent
 
-- name: Install nodejs >= v18.19.0
-  ansible.builtin.dnf:
-    name: nodejs >= v18.19.0
+- name: Install node.js package on version 1.6.1.
+  community.general.npm:
+    name: node.js
+    version: '18.19.0'
     state: installed
 
 
