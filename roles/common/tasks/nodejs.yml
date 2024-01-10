@@ -6,7 +6,7 @@
 
 - name: Install nodejs >= 18.19.0
   ansible.builtin.dnf:
-    name: node.js >= "v18.19.0"
+    name: node.js >= "18.19.0"
     state: installed
 
 
