@@ -1,8 +1,3 @@
-- name: Remove the nodejs
-  ansible.builtin.dnf:
-    name: nodejs
-    state: absent
-
 - name: Enable and install nodejs 18
   ansible.builtin.dnf:
     name: '@nodejs:18'
