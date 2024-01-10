@@ -4,9 +4,9 @@
     state: absent
     disable_gpg_check: yes
 
-- name: Install nodejs >= 18
+- name: Install nodejs >= 18.19.0
   ansible.builtin.dnf:
-    name: nodejs >= 18
+    name: nodejs >= 18.19.0
     state: installed
 
 
