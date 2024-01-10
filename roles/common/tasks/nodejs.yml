@@ -3,10 +3,11 @@
     name: nodejs
     state: absent
 
-- name: Install nodejs >= v18.19.0
+- name: Enable and Install nodejs
   ansible.builtin.dnf:
-    name: nodejs >= v18.19.0
+    name: "@nodejs:18.19.0"
     state: installed
+
 
 
 
