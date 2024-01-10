@@ -1,7 +1,3 @@
-- name: Remove the nodejs package
-  ansible.builtin.dnf:
-    name: nodejs
-    state: absent
 
 - name: Install  the latest version of nodejs
   ansible.builtin.dnf:
