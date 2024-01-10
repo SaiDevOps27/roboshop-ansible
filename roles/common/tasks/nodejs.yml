@@ -1,8 +1,7 @@
-- name: Install nodejs
+- name: Install the latest version of nodejs
   ansible.builtin.dnf:
-    name: '@nodejs:18.19.1'
-    state: installed
-
+    name: nodejs
+    state: latest
 
 
 
