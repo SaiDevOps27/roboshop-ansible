@@ -1,3 +1,11 @@
+- name: Configure nodejs repo
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_1ts.x | bash
+
+
+- name: Enable and install nodejs
+  ansible.builtin.dnf:
+    name: nodejs
+    state: installed
 
 
 
