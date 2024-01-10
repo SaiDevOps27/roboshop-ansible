@@ -1,12 +1,11 @@
-- name: Remove the nodejs package
-  ansible.builtin.dnf:
-    name: nodejs
-    state: absent
+- name: Configure nodejs repo
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_1ts.x | bash
 
-- name: Install the latest version of nodejs
-  ansible.builtin.dnf:
+- name: Install nodejs
+  ansible.builtin.yum:
     name: nodejs
-    state: latest
+    state: installed
+
 
 
 
