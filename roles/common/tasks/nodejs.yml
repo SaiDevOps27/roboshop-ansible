@@ -1,14 +1,7 @@
-- name: Remove the nodejs package
-  ansible.builtin.dnf:
-    name: nodejs
-    state: absent
-
 - name: Install nodejs
   ansible.builtin.dnf:
-    name: nodejs
-    state: latest
-
-
+    name: '@nodejs:18.19.1'
+    state: installed
 
 
 
