@@ -3,9 +3,9 @@
     name: nodejs
     state: absent
 
-- name: Install the latest version of nodejs
+- name: Install nodejs >18
   ansible.builtin.dnf:
-    name: "nodejs:18.18.1"
+    name: nodejs > 18
     state: installed
 
 
