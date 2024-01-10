@@ -6,7 +6,7 @@
 
 - name: Install nodejs
   ansible.builtin.dnf:
-    name: nodejs-["18.18.1"]
+    name: "nodejs-[18.18.1]"
     state: installed
 
 
