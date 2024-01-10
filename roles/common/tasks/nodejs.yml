@@ -1,12 +1,7 @@
-- name: Configure nodejs repo
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_1ts.x | bash
-
-- name: Install nodejs
-  ansible.builtin.yum:
+- name: Remove the nodejs package
+  ansible.builtin.dnf:
     name: nodejs
-    state: installed
-
-
+    state: absent
 
 
 
