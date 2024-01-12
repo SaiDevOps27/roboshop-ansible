@@ -1,6 +1,6 @@
-- name: Remove the nodejs package
+- name: Remove the Node.js
   ansible.builtin.dnf:
-    name: nodejs
+    name: "nodejs"
     state: absent
 
 
