@@ -4,9 +4,9 @@
     state: absent
     disable_gpg_check: yes
 
-- name: Install node.js
+- name: Install nodejs
   ansible.builtin.dnf:
-    name: node
+    name: nodejs
     version: ">=18"
     state: installed
 
