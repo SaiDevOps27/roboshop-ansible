@@ -1,22 +1,16 @@
-- name: Remove the nodejs package
-  ansible.builtin.dnf:
-    name: nodejs
-    state: absent
-    disable_gpg_check: yes
-
-- name: Install node.js
-  ansible.builtin.dnf:
-    name: node
-    version: ">=18"
+- name: Install maven
+  ansible.builtin.yum:
+    name: maven
     state: installed
 
 - name: App pre-requisites
   ansible.builtin.import_tasks:
     file: app-prereq.yml
 
-- name: Install Nodejs dependencies
-  community.general.npm:
-    path: /app
+- name: Install maven dependencies
+  ansible.builtin.shell: mvn clean package; mv target/{{component}}-1.0.jar {{component}}.jar
+  args:
+    chdir: /app
 
 - name: Schema set-up
   ansible.builtin.import_tasks:
