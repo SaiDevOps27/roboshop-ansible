@@ -1,5 +1,5 @@
 dependencies:
-  - name: common
+  - role: common
 
 
 
