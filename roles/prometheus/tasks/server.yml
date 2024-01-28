@@ -9,8 +9,6 @@
     dest: /opt/prometheus/{{ item }}
   loop: "{{ alert_files }}"
 
-
-
 - name: restart prometheus
   ansible.builtin.systemd:
     name: prometheus
@@ -18,3 +16,18 @@
 
 - name: check prometheus is started
   ansible.builtin.shell: netstat -lntp | grep 9090
+
+- name: update alertmanager configuration
+  ansible.builtin.template:
+    src: alertmanager.yml
+    dest: /opt/alertmanager/alertmanager.yml
+
+- name: restart alertmanager
+  ansible.builtin.systemd:
+    name: alertmanager
+    state: restarted
+
+- name: check alertmanager is started
+  ansible.builtin.shell: netstat -lntp | grep 9093
+
+
