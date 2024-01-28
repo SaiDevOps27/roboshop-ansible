@@ -5,11 +5,16 @@
 
 - name: update Alerts configuration
   ansible.builtin.template:
-    src: Alerts.yml
-    dest: /opt/prometheus/Alerts.yml
+    src: "{{ item }}"
+    dest: /opt/prometheus/{{ item }}
+  loop: "{{ alert_files }}"
+
 
 
 - name: restart prometheus
   ansible.builtin.systemd:
     name: prometheus
     state: restarted
+
+- name: check prometheus is started
+  ansible.builtin.shell: netstat -lntp | grep 9090
