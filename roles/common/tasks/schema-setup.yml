@@ -13,7 +13,7 @@
     - name: Download MongoDB Pem File
       ansible.builtin.get_url:
         url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
-        dest: /app/global/global-bundle.pem
+        dest: /global-bundle.pem
 
 
     - name: Load Schema
