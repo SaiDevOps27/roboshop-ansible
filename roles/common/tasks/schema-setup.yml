@@ -12,8 +12,8 @@
         state: installed
     - name: Download MongoDB Pem File
       ansible.builtin.get_url:
-        url: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
-        dest: /app/global-bundle.pem
+        url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
+        dest: /app/rds-combined-ca-bundle.pem
 
 
     - name: Load Schema
